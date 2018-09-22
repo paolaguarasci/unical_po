@@ -4,7 +4,21 @@
 #### Attenzione! Repository creato per scopi personali, la pagina ufficiale del corso la trovi [qui](https://www.mat.unical.it/informatica/ProgrammazioneAdOggetti).
 
 ## Programma
---> [link](doc/programma.pdf)
+Obiettivo primario del corso è quello di fornire un'adeguata conoscenza dei concetti avanzati della programmazione orientata agli oggetti e dei tipi di dati astratti.  Lo studente acquisirà, inoltre, la capacità di implementare nel Linguaggio C++ algoritmi e strutture dati che sfruttano tutte le potenzialità della programmazione ad oggetti e fanno uso dell'allocazione dinamica della memoria. Il corso prevede un'ampia attivita' di laboratorio dove lo studente familiarizzera' con ambienti di programmazione C++.
+
+- Introduzione alla Programmazione ad Oggetti per lo Sviluppo di Software
+- Le classi in C++: concetti avanzati
+    - Astrazione dei dati e strutture dati complesse
+    - Classi Template
+    - Ereditarietà
+    - Polimorfismo
+- Strutture dati fondamentali
+    - Array dinamici
+    - Pile
+    - Code
+    - Liste concatenate con iteratori
+
+[fonte](http://www.unical.it/portale/portaltemplates/view/view_scheda_insegnamento.cfm?43198&LANG=ITA)
 
 ## Risorse istituzionali
 --> [link](doc)
