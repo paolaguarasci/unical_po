@@ -2,9 +2,9 @@
 ### fonte: [pagina del corso](https://www.mat.unical.it/informatica/FondamentiDIInformatica)
 
 ## Materiale
-- Allegro[pdf](Allegro.pdf)
-- C++11[pdf](c++11.pdf)
-- Liste e Vettori STL[pdf](STL-Liste-Vettori.pdf)
+- Allegro [pdf](Allegro.pdf)
+- C++11 [pdf](c++11.pdf)
+- Liste e Vettori STL [pdf](STL-Liste-Vettori.pdf)
 
 ## Test d'ingresso a.a. 2017-2018
 - Gelato [pdf](esercitazioni/20170925-Gelato.txt)
@@ -31,13 +31,13 @@
 - Cinema [link](tracce/20160209-Cinema)
 - Esperimenti [link](tracce/20160225-Esperimenti)
 - Museo [link](tracce/20160705-Museo)
-- MatriceOrdinaria [link](tracce/20160729-MatriceOrdinaria)
+- Matrice Ordinaria [link](tracce/20160729-MatriceOrdinaria)
 - Olimpiade [link](tracce/20160922-Olimpiade)
-- CalcolatriceAvanzata [link](tracce/20161122-CalcolatriceAvanzata)
-- AgenziaViaggi [link](tracce/20170207-AgenziaViaggi)
+- Calcolatrice Avanzata [link](tracce/20161122-CalcolatriceAvanzata)
+- Agenzia di Viaggi [link](tracce/20170207-AgenziaViaggi)
 - Supermercato [link](tracce/20170227-Supermercato)
 - Amazon [link](tracce/20170322-Amazon)
-- AnalizzatoreCerchi [link](tracce/20170629-AnalizzatoreCerchi)
+- Analizzatore di Cerchi [link](tracce/20170629-AnalizzatoreCerchi)
 - Giardino [link](tracce/20170919-Giardino)
-- GestoreContatti [link](tracce/20171016-GestoreContatti)
+- Gestore Contatti [link](tracce/20171016-GestoreContatti)
 - Sudoku [link](tracce/20180205-Sudoku)
