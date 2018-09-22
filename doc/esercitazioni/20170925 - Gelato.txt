@@ -1,0 +1,25 @@
+enum TipoGelato {CONO, COPPETTA, BRIOCHE};
+
+class Gelato {
+friend ostream& operator>>(ostream&, Gelato &);
+friend ostream& operator<<(ostream&, const Gelato &);
+private:
+    string* gusti;
+    unsigned numeroGusti;
+    TipoGelato tipo;
+public:
+    Gelato ();  
+    Gelato (const string *,unsigned, TipoGelato); 
+    const string& getGusto(unsigned) const;
+    unsigned getNumeroGusti() const;
+    TipoGelato getTipo() const;
+    void setTipo(TipoGelato);
+    bool contieneGusto(const string &) const;
+    bool operator==(const Gelato &) const;  
+    void aggiungiGusto(const string&); 
+    …      
+};
+
+Aggiungere eventuali metodi che si ritengono utili o 
+necessari per la corretta definizione della classe. 
+Fornire inoltre l’implementazione di tutti i metodi della classe.
