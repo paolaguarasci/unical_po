@@ -27,6 +27,7 @@ Obiettivo primario del corso è quello di fornire un'adeguata conoscenza dei con
 - Prova di laboratorio svolta: [link](https://alviano.com/2010/04/12/programmazione-a-oggetti-appello-straordinario-aprile-2010/) [!outdate]
 
 ## Risorse alternative
-
+[link](resource/README.md)
 
 ## Laboratorio
+[link](lab/README.md)
