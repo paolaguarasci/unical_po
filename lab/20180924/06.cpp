@@ -4,18 +4,16 @@ using namespace std;
 int main()
 {
     char *X[20];
-    char **matrice = new char *[20];
-    for (int i = 0; i < 20; i++)
-    {
-        matrice[i] = new char[10];
-    }
-
-    // Utilizzo
 
     for (int i = 0; i < 20; i++)
     {
-        delete[] matrice[i];
+        X[i] = new char[10];
     }
 
-    delete[] matrice;
+    // // Utilizzo
+
+    for (int i = 0; i < 20; i++)
+    {
+        delete[] X[i];
+    }
 }

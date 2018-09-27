@@ -9,7 +9,11 @@ class Corso
   friend istream &operator>>(istream &, Corso &);
 
 public:
-  Corso(string = " ", int = 0, int * = 0, int = 0);
+  // Corso(string n): nome(n), semestre(1), elenco(nullptr), size(0) {}
+  // I costruttori che hanno un solo parametro devono essere usati con 'explicit'
+  // SENZA explicit permette la conversione
+  // CON permette la conversione implicita
+  Corso(const string & = " ", int = 0, int * = nullptr, int = 0);
   Corso(const Corso &);
   ~Corso();
   const Corso &operator=(const Corso &);
@@ -23,6 +27,12 @@ public:
   const int operator[](int) const;
 
 private:
+  // dal c++ 11 posso inizializzare qui!
+  // se non c'è alcun costruttore, uso questi dati
+  // ha priorità il costruttore
+  // Attenzione:
+  // lista di inizializzazione nel costruttore evita la perdita di riferimenti
+  // a memoria dinamica inizializzata qui (perchè c'è il rischio di memory leak)
   int semestre;
   string nome;
   int *matricole;
@@ -69,7 +79,7 @@ std::istream &operator>>(std::istream &is, Corso &toRead)
   return is;
 }
 
-Corso::Corso(string n, int s, int *mat, int nStud)
+Corso::Corso(const string &n, int s, int *mat, int nStud)
 {
   nome = n;
   semestre = s;
