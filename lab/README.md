@@ -3,6 +3,8 @@
 ## Snippet
 
 ## Esercitazioni di laboratorio
+10 Ottobre 2018 Lunedì [->] (20181001/README.md)
+
 #### Tracce
 #### Mie Soluzioni
 
