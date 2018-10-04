@@ -3,7 +3,10 @@
 ## Snippet
 
 ## Esercitazioni di laboratorio
-10 Ottobre 2018 Lunedì [link](20181001/README.md)
+1 Ottobre 2018 Lunedì [link](20181001/README.md)
+
+## Esercizi in classe
+4 Ottobre 2018 Giovedi - Classe Pair e template[.cpp](20181004/esercizio.cpp)
 
 #### Tracce
 #### Mie Soluzioni
