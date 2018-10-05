@@ -7,13 +7,13 @@ unsigned sort(T &arr, unsigned size)
     unsigned lastSwapped = size;
     unsigned countNSwap = 0;
     bool isSwap = true;
-    for (int j = 0; j < sisze; j++)
+    for (int j = 0; j < size; j++)
     {
         for (int i = 0; i < size - 1; i++)
         {
             if (arr[i] > arr[i + 1])
             {
-                swap(i, i + 1);
+                swap(arr[i], arr[i + 1]);
                 countNSwap++;
             }
         }
