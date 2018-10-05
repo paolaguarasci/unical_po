@@ -1,6 +1,11 @@
 # Esercitationi 2018/2019
 
 ## Snippet
+#### Sort
+- bubble **non ottimizzato** [.cpp](_snippet/sort_bubble.cpp)
+
+#### Utils
+- swap [.cpp](_snippet/utils_swap.cpp)
 
 ## Esercitazioni di laboratorio
 1 Ottobre 2018 Lunedì [link](20181001/README.md)
