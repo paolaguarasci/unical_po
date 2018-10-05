@@ -1,10 +1,13 @@
-sort(int *arr)
+// TODO Ottimizzazione
+
+template <typename T>
+unsigned sort(T &arr, unsigned size)
 {
     // Implementiamo un semplice bubble sort nemmeno tanto ottimizzato
-    int lastSwapped = size;
-    int countNSwap = 0;
+    unsigned lastSwapped = size;
+    unsigned countNSwap = 0;
     bool isSwap = true;
-    for (int j = 0; j < size; j++)
+    for (int j = 0; j < sisze; j++)
     {
         for (int i = 0; i < size - 1; i++)
         {
@@ -15,6 +18,5 @@ sort(int *arr)
             }
         }
     }
-
-    cout << "Numero di swap effettuati: " << countNSwap << endl;
+    return countNSwap;
 }
