@@ -8,10 +8,12 @@
 - swap [.cpp](_snippet/utils_swap.cpp)
 
 ## Esercitazioni di laboratorio
-1 Ottobre 2018 Lunedì [link](20181001/README.md)
+- 1 Ottobre 2018 Lunedì [link](20181001/README.md)
+- 15 Ottobre 2018 Lunedì [Triple e STL Vector](20181001/README.md)
 
 ## Esercizi in classe
-4 Ottobre 2018 Giovedi - Classe Pair e template [.cpp](20181004/esercizio.cpp)
+- 4 Ottobre 2018 Giovedi - Classe Pair e template [.cpp](20181004/esercizio.cpp)
+- 11 Ottobre 2018 Giovedi - Liste concatenate [...](#)
 
 #### Tracce
 #### Mie Soluzioni
