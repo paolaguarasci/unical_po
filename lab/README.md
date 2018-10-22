@@ -9,7 +9,8 @@
 
 ## Esercitazioni di laboratorio
 - 1 Ottobre 2018 Lunedì [link](20181001/README.md)
-- 15 Ottobre 2018 Lunedì [Triple e STL Vector](20181001/README.md)
+- 15 Ottobre 2018 Lunedì [Triple e STL Vector](20181015/README.md)
+- 22 Ottobre 2018 Lunedì [Liste STL, GestoreContatti e Stack](20181022/README.md)
 
 ## Esercizi in classe
 - 4 Ottobre 2018 Giovedi - Classe Pair e template [.cpp](20181004/esercizio.cpp)
