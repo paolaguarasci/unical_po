@@ -1,4 +1,4 @@
-# Esercitazione del 01 - 10 - 2018
+# Esercitazione del 22 - 10 - 2018
 
 [Traccia](traccia.pdf)
 ---
