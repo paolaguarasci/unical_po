@@ -1,4 +1,4 @@
-# Esercitationi 2018/2019
+# Esercitazioni 2018/2019
 
 ## Snippet
 #### Sort
