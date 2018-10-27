@@ -13,8 +13,9 @@
 - 22 Ottobre 2018 Lunedì [Liste STL, GestoreContatti e Stack](20181022/README.md)
 
 ## Esercizi in classe
-- 4 Ottobre 2018 Giovedi - Classe Pair e template [.cpp](20181004/esercizio.cpp)
-- 11 Ottobre 2018 Giovedi - Liste concatenate [...](#)
+- 4 Ottobre 2018 Giovedi [Classe Pair e template](20181004/esercizio.cpp)
+- 11 Ottobre 2018 Giovedi [Liste concatenate](#)
+- 26 Ottobre 2018 Giovedi [Mobilificio](20181025/README.md)
 
 #### Tracce
 #### Mie Soluzioni
