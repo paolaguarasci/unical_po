@@ -1,5 +1,11 @@
+#pvt
+_aTempoPerso
+
 #exec
 a.out
+
+#vscode config
+.vscode/*.*
 
 # Logs
 logs
@@ -75,5 +81,3 @@ typings/
 # Serverless directories
 .serverless
 
-#vscode config
-.vscode
