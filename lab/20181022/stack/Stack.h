@@ -3,18 +3,15 @@
 #include <vector>
 using namespace std;
 template <class T>
-class Stack
-{
-private:
+class Stack {
+ private:
   vector<T> s;
 
-public:
+ public:
   Stack() {}
   void push(const T &e) { s.push_back(e); }
-  bool pop()
-  {
-    if (s.empty())
-      return false;
+  bool pop() {
+    if (s.empty()) return false;
     s.pop_back();
     return true;
   }

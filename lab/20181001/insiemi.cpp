@@ -2,18 +2,17 @@
 #include <iostream>
 using namespace std;
 
-class Set
-{
+class Set {
   friend ostream &operator<<(ostream &, const Set &);
   friend istream &operator>>(istream &, Set &);
 
-private:
+ private:
   int valoreMassimo;
   bool *insieme;
   int findValoreMassimo(int *, size_t);
   void init();
 
-public:
+ public:
   Set();
   Set(const Set &);
   Set(int *, int);
@@ -26,30 +25,23 @@ public:
   Set intersezione(const Set &);
 };
 
-ostream &operator<<(ostream &os, const Set &toPrint)
-{
+ostream &operator<<(ostream &os, const Set &toPrint) {
   os << "{";
-  for (size_t i = 0; i < toPrint.valoreMassimo + 1; i++)
-  {
-    if (toPrint.insieme[i] && i != toPrint.valoreMassimo)
-    {
+  for (size_t i = 0; i < toPrint.valoreMassimo + 1; i++) {
+    if (toPrint.insieme[i] && i != toPrint.valoreMassimo) {
       os << i << ", ";
-    }
-    else if (toPrint.insieme[i] && i == toPrint.valoreMassimo)
-    {
+    } else if (toPrint.insieme[i] && i == toPrint.valoreMassimo) {
       os << i;
     }
   }
   os << "}";
   return os;
 }
-istream &operator>>(istream &is, Set &toRead)
-{
+istream &operator>>(istream &is, Set &toRead) {
   int dim;
   is >> dim;
   int *tmp = new int[dim]();
-  for (size_t i = 0; i < dim; i++)
-  {
+  for (size_t i = 0; i < dim; i++) {
     is >> tmp[i];
   }
 
@@ -58,86 +50,63 @@ istream &operator>>(istream &is, Set &toRead)
   return is;
 }
 
-int Set::findValoreMassimo(int *list, size_t dim)
-{
+int Set::findValoreMassimo(int *list, size_t dim) {
   int max = 0;
-  for (size_t i = 0; i < dim; i++)
-  {
-    if (list[i] > list[max])
-    {
+  for (size_t i = 0; i < dim; i++) {
+    if (list[i] > list[max]) {
       max = i;
     }
   }
   return list[max];
 }
-void Set::init()
-{
-  for (size_t i = 0; i < valoreMassimo + 1; i++)
-  {
+void Set::init() {
+  for (size_t i = 0; i < valoreMassimo + 1; i++) {
     insieme[i] = false;
   }
 }
 
 Set::Set() : valoreMassimo(0), insieme(0) {}
-Set::Set(const Set &toCopy)
-{
+Set::Set(const Set &toCopy) {
   valoreMassimo = toCopy.valoreMassimo;
   insieme = new bool[valoreMassimo + 1];
   init();
-  for (size_t i = 0; i < valoreMassimo + 1; i++)
-  {
+  for (size_t i = 0; i < valoreMassimo + 1; i++) {
     insieme[i] = toCopy.insieme[i];
   }
 }
-Set::Set(int *list, int dim)
-{
+Set::Set(int *list, int dim) {
   valoreMassimo = findValoreMassimo(list, dim);
   insieme = new bool[valoreMassimo + 1];
   init();
-  for (size_t i = 0; i < dim; i++)
-  {
+  for (size_t i = 0; i < dim; i++) {
     insieme[list[i]] = true;
   }
 }
-Set::~Set()
-{
-  delete[] insieme;
-}
-const Set &Set::operator=(const Set &rhs)
-{
-  if (this != &rhs)
-  {
+Set::~Set() { delete[] insieme; }
+const Set &Set::operator=(const Set &rhs) {
+  if (this != &rhs) {
     delete[] insieme;
     valoreMassimo = rhs.valoreMassimo;
     insieme = new bool[valoreMassimo + 1];
     init();
-    for (size_t i = 0; i < valoreMassimo + 1; i++)
-    {
+    for (size_t i = 0; i < valoreMassimo + 1; i++) {
       insieme[i] = rhs.insieme[i];
     }
   }
   return *this;
 }
 
-void Set::cambiaDimensione(int nuovaDim)
-{
-  if (valoreMassimo == 0)
-  {
+void Set::cambiaDimensione(int nuovaDim) {
+  if (valoreMassimo == 0) {
     valoreMassimo = nuovaDim;
     insieme = new bool[valoreMassimo + 1];
     init();
-  }
-  else
-  {
+  } else {
     bool *arrTmp = new bool[nuovaDim];
-    for (size_t i = 0; i < nuovaDim; i++)
-    {
-      if (i < valoreMassimo + 1)
-      {
+    for (size_t i = 0; i < nuovaDim; i++) {
+      if (i < valoreMassimo + 1) {
         arrTmp[i] = insieme[i];
-      }
-      else
-      {
+      } else {
         arrTmp[i] = false;
       }
     }
@@ -146,38 +115,28 @@ void Set::cambiaDimensione(int nuovaDim)
     insieme = arrTmp;
   }
 }
-void Set::aggiungiElemento(int nuovoElemento)
-{
-  if (nuovoElemento > valoreMassimo)
-  {
+void Set::aggiungiElemento(int nuovoElemento) {
+  if (nuovoElemento > valoreMassimo) {
     cambiaDimensione(nuovoElemento);
   }
   insieme[nuovoElemento] = true;
 }
-Set Set::unione(const Set &altroInsieme)
-{
+Set Set::unione(const Set &altroInsieme) {
   const Set *big = this;
   const Set *small = &altroInsieme;
 
-  if (this->valoreMassimo < altroInsieme.valoreMassimo)
-  {
+  if (this->valoreMassimo < altroInsieme.valoreMassimo) {
     big = &altroInsieme;
     small = this;
   }
   Set tmp;
-  for (size_t i = 0; i < (big->valoreMassimo) + 1; i++)
-  {
-    if (i < (small->valoreMassimo) + 1)
-    {
-      if (small->insieme[i] || big->insieme[i])
-      {
+  for (size_t i = 0; i < (big->valoreMassimo) + 1; i++) {
+    if (i < (small->valoreMassimo) + 1) {
+      if (small->insieme[i] || big->insieme[i]) {
         tmp.aggiungiElemento(i);
       }
-    }
-    else
-    {
-      if (big->insieme[i])
-      {
+    } else {
+      if (big->insieme[i]) {
         tmp.aggiungiElemento(i);
       }
     }
@@ -185,21 +144,17 @@ Set Set::unione(const Set &altroInsieme)
   return tmp;
 }
 
-Set Set::intersezione(const Set &altroInsieme)
-{
+Set Set::intersezione(const Set &altroInsieme) {
   const Set *big = this;
   const Set *small = &altroInsieme;
 
-  if (this->valoreMassimo < altroInsieme.valoreMassimo)
-  {
+  if (this->valoreMassimo < altroInsieme.valoreMassimo) {
     big = &altroInsieme;
     small = this;
   }
   Set tmp;
-  for (size_t i = 0; i < (small->valoreMassimo) + 1; i++)
-  {
-    if (small->insieme[i] && big->insieme[i])
-    {
+  for (size_t i = 0; i < (small->valoreMassimo) + 1; i++) {
+    if (small->insieme[i] && big->insieme[i]) {
       tmp.aggiungiElemento(i);
     }
   }
@@ -207,8 +162,7 @@ Set Set::intersezione(const Set &altroInsieme)
 }
 
 // MAIN //
-int main()
-{
+int main() {
   // Set set;
   // cin >> set;
   // cout << set << endl;

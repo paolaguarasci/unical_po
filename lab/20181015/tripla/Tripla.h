@@ -2,20 +2,20 @@
 #define TRIPLA_H
 #include <iostream>
 template <typename T1, typename T2, typename T3>
-class Tripla
-{
-  friend std::ostream &operator<<(std::ostream &os, const Tripla<T1, T2, T3> &toPrint)
-  {
-    os << "<" << toPrint.one << ", " << toPrint.two << ", " << toPrint.three << ">";
+class Tripla {
+  friend std::ostream &operator<<(std::ostream &os,
+                                  const Tripla<T1, T2, T3> &toPrint) {
+    os << "<" << toPrint.one << ", " << toPrint.two << ", " << toPrint.three
+       << ">";
     return os;
   }
 
-private:
+ private:
   T1 one;
   T2 two;
   T3 three;
 
-public:
+ public:
   Tripla() : one(), two(), three() {}
   Tripla(const T1 &a, const T2 &b, const T3 &c) : one(a), two(b), three(c) {}
 
@@ -25,18 +25,13 @@ public:
   void setOne(const T1 &one) { this->one = one; }
   void setTwo(const T2 &two) { this->two = two; }
   void setThree(const T3 &three) { this->three = three; }
-  bool operator==(const Tripla &rhs)
-  {
+  bool operator==(const Tripla &rhs) {
     return (one == rhs.one) && (two == rhs.two) && (three == rhs.three);
   }
-  void stampa() const
-  {
+  void stampa() const {
     std::cout << "<" << one << ", " << two << ", " << three << ">";
   }
-  void leggi()
-  {
-    std::cin >> one >> two >> three;
-  }
+  void leggi() { std::cin >> one >> two >> three; }
 };
 
-#endif // TRIPLA_H
+#endif  // TRIPLA_H

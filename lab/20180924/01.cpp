@@ -2,8 +2,7 @@
 using namespace std;
 
 // non scandisce mai tutto l'array, esegue solo un'iterazione del for
-bool f(int v[], int lun, int x)
-{
+bool f(int v[], int lun, int x) {
   for (int i = 0; i < lun; i++)
     if (v[i] == x)
       return true;
@@ -11,8 +10,7 @@ bool f(int v[], int lun, int x)
       return false;
 }
 
-int main()
-{
+int main() {
   int v[4] = {11, 21, 13, 4};
   int x = 21;
   int lun = 4;

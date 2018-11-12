@@ -1,9 +1,8 @@
-#include "GestoreContatti.h"
-#include <vector>
 #include <string>
+#include <vector>
+#include "GestoreContatti.h"
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   Contatto a("Michele", "Rossi", "12345", "email");
   Contatto b("Michele", "Verdi", "12345", "email");
   Contatto c("Michele", "Verdi", "12345", "email");

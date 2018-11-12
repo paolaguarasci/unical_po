@@ -3,15 +3,15 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class Contatto
-{
+class Contatto {
   friend istream &operator>>(istream &in, Contatto &);
   friend ostream &operator<<(ostream &out, const Contatto &);
 
-public:
+ public:
   Contatto();
   Contatto(const string &nom, const string &cog);
-  Contatto(const string &nom, const string &cog, const string &n, const string &e);
+  Contatto(const string &nom, const string &cog, const string &n,
+           const string &e);
   void setNome(const string &nom);
   void setCognome(const string &cog);
   void setTelefono(const string &telefono);
@@ -25,7 +25,7 @@ public:
   bool operator<(const Contatto &c) const;
   bool operator>(const Contatto &c) const;
 
-private:
+ private:
   string nome;
   string cognome;
   string telefono;

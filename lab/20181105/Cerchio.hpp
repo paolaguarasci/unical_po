@@ -5,10 +5,6 @@
 #ifndef INC_20181105_CERCHIO_HPP
 #define INC_20181105_CERCHIO_HPP
 
+class Cerchio {};
 
-class Cerchio {
-
-};
-
-
-#endif //INC_20181105_CERCHIO_HPP
+#endif  // INC_20181105_CERCHIO_HPP

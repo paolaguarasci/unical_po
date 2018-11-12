@@ -1,11 +1,10 @@
 #ifndef GESTORECONTATTI_H
 #define GESTORECONTATTI_H
 
-#include "Contatto.h"
 #include <list>
-class GestoreContatti
-{
-public:
+#include "Contatto.h"
+class GestoreContatti {
+ public:
   GestoreContatti();
   ~GestoreContatti();
 
@@ -14,11 +13,12 @@ public:
   int numeroContatti();
   void ordinaContatti();
   bool eliminaContattoConRemove(const Contatto &c);
-  std::vector<std::string> trovaNumeri(const string &nome, const string &cognome);
+  std::vector<std::string> trovaNumeri(const string &nome,
+                                       const string &cognome);
   std::string trovaCognomePiuFrequente(int &freq);
   bool verificaDueContattiStessoTelefono();
 
-private:
+ private:
   std::list<Contatto> contatti;
 };
-#endif //GESTORECONTATTI_H
+#endif  // GESTORECONTATTI_H
