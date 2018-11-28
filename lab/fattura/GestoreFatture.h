@@ -1,4 +1,3 @@
-#
 #if !defined(GESTOREFATTURE_H)
 #define GESTOREFATTURE_H
 
@@ -23,6 +22,12 @@ class GestoreFatture {
   int vendeAlimCompraSport() const;
   int nonCompraCult() const;
   double sommaImportiFattureEmessePrimaESeconda() const;
+
+  // utils
+  double getMediaEmesse(const std::string&) const;
+  double getMediaRicevute(const std::string& azienda) const;
+  int tipiDiversi(const std::string& azienda) const;
+  bool compraAlmenoUno(const std::string& azienda, const PRODOTTO& prod) const;
 
  private:
   std::list<Fattura> fatture;
