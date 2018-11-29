@@ -193,7 +193,51 @@ std::string GestoreFatture::metodo11() {
   }
   return result.substr(0, result.length() - 1);
 }
-int GestoreFatture::metodo12() { return 0; }
+std::string GestoreFatture::metodo12() {
+  std::vector<std::tuple<std::string, double>> apparizioni;
+  for (auto fattura : fatture) {
+    std::string key = fattura.getEmettitrice();
+    if (find_if(apparizioni.begin(), apparizioni.end(),
+                [key](const std::tuple<std::string, double>& a) {
+                  return std::get<0>(a) == key;
+                }) == apparizioni.end())
+      apparizioni.push_back(
+          std::make_tuple(fattura.getEmettitrice(),
+                          countApparizioni(fattura.getEmettitrice())));
+    key = fattura.getRicevente();
+    if (find_if(apparizioni.begin(), apparizioni.end(),
+                [key](const std::tuple<std::string, double>& a) {
+                  return std::get<0>(a) == key;
+                }) == apparizioni.end())
+      apparizioni.push_back(std::make_tuple(
+          fattura.getRicevente(), countApparizioni(fattura.getRicevente())));
+  }
+  sort(apparizioni.begin(), apparizioni.end(),
+       [](const std::tuple<std::string, double>& a,
+          const std::tuple<std::string, double>& b) {
+         return std::get<1>(a) < std::get<1>(b);
+       });
+  std::string aziendaMenoPresente = std::get<0>(apparizioni[0]);
+  std::vector<std::string> result;
+  for (auto fattura : fatture) {
+    if ((fattura.getEmettitrice() == aziendaMenoPresente) &&
+        find(result.begin(), result.end(), fattura.getEmettitrice()) ==
+            result.end()) {
+      result.push_back(fattura.getRicevente());
+    }
+    if ((fattura.getRicevente() == aziendaMenoPresente) &&
+        find(result.begin(), result.end(), fattura.getRicevente()) ==
+            result.end()) {
+      result.push_back(fattura.getEmettitrice());
+    }
+  }
+  sort(result.begin(), result.end());
+  std::string result_str = "";
+  for (auto r : result) {
+    result_str += r + ",";
+  }
+  return result_str.substr(0, result_str.length() - 1);
+}
 int GestoreFatture::metodo13() { return 0; }
 int GestoreFatture::metodo14() { return 0; }
 int GestoreFatture::metodo15() { return 0; }
@@ -250,6 +294,22 @@ int GestoreFatture::countDaA(const std::string& a, const std::string& b) const {
   int sum = 0;
   for (auto fattura : fatture) {
     if (fattura.getEmettitrice() == a && fattura.getRicevente() == b) sum++;
+  }
+
+  return sum;
+}
+
+int GestoreFatture::countApparizioni(const std::string& a) const {
+  int sum = 0;
+  for (auto fattura : fatture) {
+    if (fattura.getEmettitrice() == a) {
+      sum++;
+      // std::cout << fattura.getEmettitrice() << " " << sum << std::endl;
+    }
+    if (fattura.getRicevente() == a) {
+      sum++;
+      // std::cout << fattura.getRicevente() << " " << sum << std::endl;
+    }
   }
 
   return sum;

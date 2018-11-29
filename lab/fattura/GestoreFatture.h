@@ -24,7 +24,7 @@ class GestoreFatture {
   double sommaImportiFattureEmessePrimaESeconda() const;
   int metodo10();
   std::string metodo11();
-  int metodo12();
+  std::string metodo12();
   int metodo13();
   int metodo14();
   int metodo15();
@@ -36,6 +36,7 @@ class GestoreFatture {
   bool compraAlmenoUno(const std::string& azienda, const PRODOTTO& prod) const;
   double getSommaEmesse(const std::string& azienda) const;
   int countDaA(const std::string& a, const std::string& b) const;
+  int countApparizioni(const std::string& a) const;
 
  private:
   std::list<Fattura> fatture;

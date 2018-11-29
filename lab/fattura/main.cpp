@@ -21,7 +21,7 @@ int main(int argc, char const *argv[]) {
   gf.aggiungi(Fattura("Azienda2", "Azienda3", 23.12, SPORTIVO));
   gf.aggiungi(Fattura("Azienda3", "Azienda1", 90, ALIMENTARE));
   gf.aggiungi(Fattura("Azienda1", "Azienda6", 0.22, CULTURALE));
-  gf.aggiungi(Fattura("Azienda9", "Azienda6", 0.22, ALIMENTARE));
+  gf.aggiungi(Fattura("Azienda8", "Azienda6", 0.22, ALIMENTARE));
 
   // cout << gf;
 
