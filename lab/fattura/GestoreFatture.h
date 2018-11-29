@@ -22,13 +22,20 @@ class GestoreFatture {
   int vendeAlimCompraSport() const;
   int nonCompraCult() const;
   double sommaImportiFattureEmessePrimaESeconda() const;
-
+  int metodo10();
+  int metodo11();
+  int metodo12();
+  int metodo13();
+  int metodo14();
+  int metodo15();
+  int metodo16();
   // utils
   double getMediaEmesse(const std::string&) const;
   double getMediaRicevute(const std::string& azienda) const;
   int tipiDiversi(const std::string& azienda) const;
   bool compraAlmenoUno(const std::string& azienda, const PRODOTTO& prod) const;
   double getSommaEmesse(const std::string& azienda) const;
+  int countDaA(const std::string& a, const std::string& b) const;
 
  private:
   std::list<Fattura> fatture;

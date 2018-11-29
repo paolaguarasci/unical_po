@@ -152,7 +152,38 @@ double GestoreFatture::sommaImportiFattureEmessePrimaESeconda() const {
 
   return std::get<1>(somme[0]) + std::get<1>(somme[1]);
 }
+int GestoreFatture::metodo10() {
+  std::vector<std::tuple<std::string, double>> alimentare;
+  std::vector<std::tuple<std::string, double>> sportivo;
+  for (auto fattura : fatture) {
+    std::string key = fattura.getEmettitrice();
+    if (fattura.getTipoProdotto() == ALIMENTARE) {
+      alimentare.push_back(std::make_tuple(key, fattura.getImporto()));
+    }
+    if (fattura.getTipoProdotto() == SPORTIVO) {
+      sportivo.push_back(std::make_tuple(key, fattura.getImporto()));
+    }
+  }
+  sort(alimentare.begin(), alimentare.end(),
+       [](const std::tuple<std::string, double>& a,
+          const std::tuple<std::string, double>& b) {
+         return std::get<1>(a) > std::get<1>(b);
+       });
+  sort(sportivo.begin(), sportivo.end(),
+       [](const std::tuple<std::string, double>& a,
+          const std::tuple<std::string, double>& b) {
+         return std::get<1>(a) < std::get<1>(b);
+       });
+  return countDaA(std::get<0>(alimentare[0]), std::get<0>(sportivo[0]));
+}
 
+int GestoreFatture::metodo11() { return 0; }
+int GestoreFatture::metodo12() { return 0; }
+int GestoreFatture::metodo13() { return 0; }
+int GestoreFatture::metodo14() { return 0; }
+int GestoreFatture::metodo15() { return 0; }
+int GestoreFatture::metodo16() { return 0; }
+// UTILS //
 double GestoreFatture::getMediaEmesse(const std::string& azienda) const {
   double sum = 0.0;
   int count = 0;
@@ -197,5 +228,14 @@ double GestoreFatture::getSommaEmesse(const std::string& azienda) const {
   for (auto fattura : fatture) {
     if (fattura.getEmettitrice() == azienda) sum += fattura.getImporto();
   }
+  return sum;
+}
+
+int GestoreFatture::countDaA(const std::string& a, const std::string& b) const {
+  int sum = 0;
+  for (auto fattura : fatture) {
+    if (fattura.getEmettitrice() == a && fattura.getRicevente() == b) sum++;
+  }
+
   return sum;
 }

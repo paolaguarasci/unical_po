@@ -35,6 +35,13 @@ int main(int argc, char const *argv[]) {
   cout << "nonCompraCult: " << gf.nonCompraCult() << endl;
   cout << "sommaImportiFattureEmessePrimaESeconda: "
        << gf.sommaImportiFattureEmessePrimaESeconda() << endl;
+  cout << "Metodo 10: " << gf.metodo10() << endl;
+  cout << "Metodo 11: " << gf.metodo11() << endl;
+  cout << "Metodo 12: " << gf.metodo12() << endl;
+  cout << "Metodo 13: " << gf.metodo13() << endl;
+  cout << "Metodo 14: " << gf.metodo14() << endl;
+  cout << "Metodo 15: " << gf.metodo15() << endl;
+  cout << "Metodo 16: " << gf.metodo16() << endl;
 
   return 0;
 }
