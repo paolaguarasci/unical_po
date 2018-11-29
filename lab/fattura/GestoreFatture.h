@@ -28,6 +28,7 @@ class GestoreFatture {
   double getMediaRicevute(const std::string& azienda) const;
   int tipiDiversi(const std::string& azienda) const;
   bool compraAlmenoUno(const std::string& azienda, const PRODOTTO& prod) const;
+  double getSommaEmesse(const std::string& azienda) const;
 
  private:
   std::list<Fattura> fatture;

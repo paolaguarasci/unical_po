@@ -134,7 +134,23 @@ int GestoreFatture::nonCompraCult() const {
   return aziende.size();
 }
 double GestoreFatture::sommaImportiFattureEmessePrimaESeconda() const {
-  return 0;
+  std::vector<std::tuple<std::string, double>> somme;
+  for (auto fattura : fatture) {
+    std::string key = fattura.getEmettitrice();
+    if (find_if(somme.begin(), somme.end(),
+                [key](const std::tuple<std::string, double>& a) {
+                  return std::get<0>(a) == key;
+                }) == somme.end())
+      somme.push_back(std::make_tuple(
+          fattura.getEmettitrice(), getSommaEmesse(fattura.getEmettitrice())));
+  }
+  sort(somme.begin(), somme.end(),
+       [](const std::tuple<std::string, double>& a,
+          const std::tuple<std::string, double>& b) {
+         return std::get<1>(a) > std::get<1>(b);
+       });
+
+  return std::get<1>(somme[0]) + std::get<1>(somme[1]);
 }
 
 double GestoreFatture::getMediaEmesse(const std::string& azienda) const {
@@ -175,4 +191,11 @@ bool GestoreFatture::compraAlmenoUno(const std::string& azienda,
       return true;
   }
   return false;
+}
+double GestoreFatture::getSommaEmesse(const std::string& azienda) const {
+  double sum = 0.0;
+  for (auto fattura : fatture) {
+    if (fattura.getEmettitrice() == azienda) sum += fattura.getImporto();
+  }
+  return sum;
 }
