@@ -177,7 +177,22 @@ int GestoreFatture::metodo10() {
   return countDaA(std::get<0>(alimentare[0]), std::get<0>(sportivo[0]));
 }
 
-int GestoreFatture::metodo11() { return 0; }
+std::string GestoreFatture::metodo11() {
+  std::list<std::string> lista;
+  for (auto fattura : fatture) {
+    if (tipiDiversi(fattura.getEmettitrice()) == 1 &&
+        fattura.getTipoProdotto() == ALIMENTARE)
+      lista.push_back(fattura.getEmettitrice());
+  }
+  lista.sort();
+  lista.unique();
+  std::string result = "";
+  for (auto a : lista) {
+    result += a;
+    result += ",";
+  }
+  return result.substr(0, result.length() - 1);
+}
 int GestoreFatture::metodo12() { return 0; }
 int GestoreFatture::metodo13() { return 0; }
 int GestoreFatture::metodo14() { return 0; }

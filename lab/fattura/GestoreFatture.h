@@ -23,7 +23,7 @@ class GestoreFatture {
   int nonCompraCult() const;
   double sommaImportiFattureEmessePrimaESeconda() const;
   int metodo10();
-  int metodo11();
+  std::string metodo11();
   int metodo12();
   int metodo13();
   int metodo14();
